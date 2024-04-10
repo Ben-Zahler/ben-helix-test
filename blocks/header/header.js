@@ -23,15 +23,14 @@ export default async function decorate(block) {
       .split("; ")
       .find((row) => row.startsWith("adaptToMembershipLevel="))
       ?.split("=")[1];
-  console.log('membershipLevel:',membershipLevel);
   if(membershipLevel) {
     const signOut = document.createElement('div');
     signOut.classList.add('nav-signout');
     signOut.innerHTML = '<div>sign out</div>';
     signOut.addEventListener('click', (el) => {
-      console.log('sign out clicked',el);
       document.cookie = "adaptToMembershipLevel=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
       document.cookie = "adaptToVerification=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+      el.currentTarget.remove()
     });
     block.append(signOut);
   }
