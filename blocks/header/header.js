@@ -33,6 +33,7 @@ export default async function decorate(block) {
       document.cookie = "adaptToMembershipLevel=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
       document.cookie = "adaptToVerification=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
     });
+    block.append(signOut);
   }
 
   // fetch nav content
