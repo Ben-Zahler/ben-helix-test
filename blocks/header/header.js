@@ -19,6 +19,20 @@ function collapseAllNavSections(sections) {
 export default async function decorate(block) {
   const cfg = readBlockConfig(block);
   block.textContent = '';
+  const membershipLevel = document.cookie
+      .split("; ")
+      .find((row) => row.startsWith("adaptToMembershipLevel="))
+      ?.split("=")[1];
+  if(membershipLevel) {
+    const signOut = document.createElement('div');
+    signOut.classList.add('nav-signout');
+    signOut.innerHTML = '<div>sign out</div>';
+    signOut.addEventListener('click', (el) => {
+      console.log('sign out clicked',el);
+      document.cookie = "adaptToMembershipLevel=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+      document.cookie = "adaptToVerification=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+    });
+  }
 
   // fetch nav content
   // const navPath = cfg.nav || '/nav';
