@@ -1,15 +1,10 @@
-import { readBlockConfig, decorateIcons } from '../../scripts/lib-franklin.js';
+import { readBlockConfig } from '../../scripts/lib-franklin.js';
 
 /**
  * collapses all open nav sections
  * @param {Element} sections The container element
  */
 
-function collapseAllNavSections(sections) {
-  sections.querySelectorAll('.nav-sections > ul > li').forEach((section) => {
-    section.setAttribute('aria-expanded', 'false');
-  });
-}
 
 /**
  * decorates the header, mainly the nav
@@ -17,7 +12,7 @@ function collapseAllNavSections(sections) {
  */
 
 export default async function decorate(block) {
-  const cfg = readBlockConfig(block);
+  readBlockConfig(block);
   block.textContent = '';
   const membershipLevel = document.cookie
       .split("; ")
