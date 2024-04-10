@@ -25,7 +25,8 @@ export default async function decorate(block) {
     signOut.addEventListener('click', (el) => {
       document.cookie = "adaptToMembershipLevel=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
       document.cookie = "adaptToVerification=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-      el.currentTarget.remove()
+      el.currentTarget.remove();
+      location.pathname = "/";
     });
     block.append(signOut);
   }
