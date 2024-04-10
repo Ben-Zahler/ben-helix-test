@@ -260,7 +260,7 @@ header nav[aria-expanded='true'] .nav-tools li {
 }
 
 header .nav-signout {
-  right: 5%;
+  right: 20px;
   position: absolute;
   top: 8px;
 }
