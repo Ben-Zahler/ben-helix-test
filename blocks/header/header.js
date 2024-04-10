@@ -23,6 +23,7 @@ export default async function decorate(block) {
       .split("; ")
       .find((row) => row.startsWith("adaptToMembershipLevel="))
       ?.split("=")[1];
+  console.log('membershipLevel:',membershipLevel);
   if(membershipLevel) {
     const signOut = document.createElement('div');
     signOut.classList.add('nav-signout');
