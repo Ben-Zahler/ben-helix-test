@@ -20,6 +20,12 @@ main .hero h1 {
     margin-right: auto;
     color: white;
 }
+main .hero h2 {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    color: white;
+}
 
 
 main .hero picture {
