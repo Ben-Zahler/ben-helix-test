@@ -16,9 +16,9 @@ export default async function decorate(block) {
   block.textContent = '';
   const membershipDataString = document.cookie
       .split("; ")
-      .find((row) => row.startsWith("adaptToMembershipData="))
+      .find((row) => row.startsWith("adaptToMemberData="))
       ?.split("=")[1];
-  const membershipData = membershipDataString ? JSON.parse(atob(membershipDataString)) : null;
+  const membershipData = membershipDataString ? JSON.parse(membershipDataString) : null;
   if(membershipData.level) {
     const signOut = document.createElement('div');
     signOut.classList.add('nav-signout');
