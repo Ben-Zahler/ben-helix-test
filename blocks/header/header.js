@@ -14,11 +14,12 @@ import { readBlockConfig } from '../../scripts/lib-franklin.js';
 export default async function decorate(block) {
   readBlockConfig(block);
   block.textContent = '';
-  const membershipLevel = document.cookie
+  const membershipDataString = document.cookie
       .split("; ")
-      .find((row) => row.startsWith("adaptToMembershipLevel="))
+      .find((row) => row.startsWith("adaptToMembershipData="))
       ?.split("=")[1];
-  if(membershipLevel) {
+  const membershipData = membershipDataString ? JSON.parse(atob(membershipDataString)) : null;
+  if(membershipData.level) {
     const signOut = document.createElement('div');
     signOut.classList.add('nav-signout');
     signOut.innerHTML = '<a href="#">sign out</a>';
