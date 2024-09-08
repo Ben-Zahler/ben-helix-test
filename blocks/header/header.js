@@ -24,7 +24,7 @@ export default async function decorate(block) {
     signOut.classList.add('nav-signout');
     signOut.innerHTML = '<a href="#">sign out</a>';
     signOut.addEventListener('click', (el) => {
-      document.cookie = "adaptToMembershipLevel=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+      document.cookie = "adaptToMemberData=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
       document.cookie = "adaptToVerification=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
       el.currentTarget.remove();
       location.pathname = "/";
