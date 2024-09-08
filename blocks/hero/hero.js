@@ -13,6 +13,6 @@ export default async function decorate(block) {
         const h1Elem = block.querySelector("h1");
         const newNode = document.createElement("h2");
         newNode.textContent = `Welcome ${membershipData.userName}`;
-        document.insertBefore(newNode, h1Elem);
+        h1Elem.parentNode.insertBefore(newNode, h1Elem);
     }
 }
